@@ -155,6 +155,8 @@ if __name__ == '__main__':
         if pos != -1:  # 该词已记录
             pair_idx = idx  #
             pair_pos = pos  # 上次查询时，已记录的词的位置
+        else:  # 已找到要续写的位置，可以退出
+            break
     content = content[:pair_pos]  # 将已记录的内容截取到上一词完整部分，即词+斜率、截距、拟合度
     # 词频输出文件 打开会清除txt内容 在此处打开
     out_file = open("知网期刊摘要词频斜率-截距-拟合度.txt", mode='w', encoding='utf-8')
